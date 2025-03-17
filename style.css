@@ -1,9 +1,36 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+
+:root {
+    --bg-color: #f8f9fa;
+    --text-color: #2c3e50;
+    --primary-color: #1abc9c;
+    --secondary-color: #16a085;
+    --card-bg: white;
+    --card-shadow: rgba(0, 0, 0, 0.1);
+    --border-color: rgba(0, 0, 0, 0.1);
+    --hover-color: #16a085;
+    --btn-bg: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    --btn-hover-bg: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
+}
+
+/* === Темная тема === */
+.dark-mode {
+    --bg-color: #1a1a1a;
+    --text-color: #ffffff;
+    --primary-color: #f39c12;
+    --secondary-color: #e67e22;
+    --card-bg: #2c2c2c;
+    --card-shadow: rgba(255, 255, 255, 0.1);
+    --border-color: rgba(255, 255, 255, 0.1);
+    --hover-color: #e67e22;
+}
+
 body {
   margin: 0;
   padding: 0;
   font-family: "Rubik", sans-serif;
   background: linear-gradient(to right, #84fab0, #8fd3f4);
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 header {
@@ -138,6 +165,42 @@ nav {
         display: block;
     }
 }
+
+.theme-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: white;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.theme-btn:hover {
+    transform: scale(1.2);
+    color: #1abc9c;
+}
+
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: white;
+}
+
+.dark-mode header {
+    background-color: rgba(26, 26, 26, 0.95);
+}
+
+.dark-mode .nav-item {
+    color: white;
+}
+
+.dark-mode .theme-btn {
+    color: #f39c12;
+}
+
+.dark-mode .theme-btn:hover {
+    color: #e67e22;
+}
+
 /* Основной контент */
 main {
   padding: 10px;
