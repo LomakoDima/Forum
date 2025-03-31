@@ -10,88 +10,329 @@
 <body>
     <header>
         <div class="header-container">
-          <div class="logo">Форум</div>
-          <div class="nav-buttons">
+            <div class="logo">Форум</div>
             <nav>
-              <ul>
-                <li><a href="#home" class="nav-item"><i class="fas fa-home"></i> Главная</a></li>
-                <li><a href="#about" class="nav-item"><i class="fas fa-info-circle"></i> О нас</a></li>
-                <li><a href="#cards-container" class="nav-item">---</a></li>
-                <li><a href="#blog" class="nav-item">---</a></li>
-                <li><a href="#faq" class="nav-item">---</a></li>
-                <li><a href="#contacts" class="nav-item"><i class="fas fa-envelope"></i> Контакты</a></li>
-                <li><a href="#" id="login-button" class="nav-item">Вход</a></li>
-              </ul>
+                <ul class="nav-links">
+                    <li><a href="#home" class="nav-item">Главная</a></li>
+                    <li><a href="#about" class="nav-item">О нас</a></li>
+                    <li><a href="#topics" class="nav-item">Темы</a></li>
+                    <li><a href="#blog" class="nav-item">Статьи</a></li>
+                    <li><a href="#faq" class="nav-item">FAQ</a></li>
+                    <li><a href="#contacts" class="nav-item">Контакты</a></li>
+                    <li><a href="#" id="login-button" class="nav-item login-btn">Вход</a></li>
+                    <li>
+                        <button id="theme-toggle" class="theme-btn">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </li>
+                </ul>
+                <div class="burger-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
             </nav>
-          </div>
         </div>
-      </header>
+    </header>
       <main>
-        <section id="home" class="section">
-            <h2 style="font-size: 30px;">Добро пожаловать на форум!</h2>
-            <p>Обсуждайте, делитесь опытом и находите единомышленников!</p>
+        <section id="universities" class="section universities-section">
+            <h2>Поиск университетов</h2>
+            <div class="search-container">
+                <input type="text" id="university-search" placeholder="Введите название университета...">
+                <button id="search-btn" class="btn-cta">Поиск</button>
+            </div>
+            <div id="results" class="results-container"></div>
         </section>
 
-        <section id="about" class="section">
-            <h2>О нас</h2>
-            <p>Наш форум создан для обсуждения различных тем, обмена опытом и поиска ответов на интересующие вопросы.</p>
+
+        <section id="home" class="section home-section">
+            <div class="home-content">
+                <h1>Добро пожаловать на форум!</h1>
+                <p>Обсуждайте, делитесь опытом и находите единомышленников!</p>
+        
+                <div class="stats">
+                    <div class="stat">
+                        <h2>10,000+</h2>
+                        <p>Активных пользователей</p>
+                    </div>
+                    <div class="stat">
+                        <h2>50,000+</h2>
+                        <p>Тем и обсуждений</p>
+                    </div>
+                    <div class="stat">
+                        <h2>500,000+</h2>
+                        <p>Сообщений</p>
+                    </div>
+                </div>
+        
+                <div class="buttons">
+                    <a href="#register" class="btn-cta">Присоединиться</a>
+                    <a href="#about" class="btn-secondary">Узнать больше</a>
+                </div>
+        
+                <div class="testimonials">
+                    <p>"Лучший форум для общения!" – <strong>Алексей</strong></p>
+                    <p>"Здесь я нашел много полезной информации!" – <strong>Мария</strong></p>
+                </div>
+            </div>
         </section>
 
-        <section id="topics" class="section">
+        <section id="about" class="section about-section">
+            <div class="about-container">
+                <div class="about-text">
+                    <h2>О нас</h2>
+                    <p>
+                        Наш форум — это место, где люди могут общаться, обмениваться знаниями и находить единомышленников.  
+                        Мы предлагаем удобную платформу для обсуждения актуальных тем, поиска советов и дележа опытом.
+                    </p>
+        
+                    <div class="features">
+                        <div class="feature">
+                            <i class="fas fa-users"></i>
+                            <p>Дружелюбное сообщество</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-lightbulb"></i>
+                            <p>Полезные советы и гайды</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-shield-alt"></i>
+                            <p>Безопасность и конфиденциальность</p>
+                        </div>
+                    </div>
+        
+                    <a href="#register" class="btn-cta">Присоединиться</a>
+                </div>
+        
+                <div class="about-image">
+                    <img src="about.jpg" alt="О нас">
+                </div>
+            </div>
+        </section>
+
+        <section id="topics" class="section topics-section">
             <h2>Популярные темы</h2>
-            <div class="cards-container">
-                <div class="card">
+            <div class="topics-container">
+                <div class="topic-card">
                     <img src="index1.jpg" alt="Технологии">
-                    <h3>Технологии</h3>
-                    <p>Обсуждаем последние новинки в мире технологий.</p>
+                    <div class="card-content">
+                        <h3>Технологии</h3>
+                        <p>Обсуждаем последние новинки в мире технологий.</p>
+                        <a href="#" class="btn-topic">Читать</a>
+                    </div>
                 </div>
-                <div class="card">
+        
+                <div class="topic-card">
                     <img src="index2.jpg" alt="Игры">
-                    <h3>Игры</h3>
-                    <p>Обсуждения любимых игр и свежих релизов.</p>
+                    <div class="card-content">
+                        <h3>Игры</h3>
+                        <p>Обсуждаем любимые игры и свежие релизы.</p>
+                        <a href="#" class="btn-topic">Читать</a>
+                    </div>
                 </div>
-                <div class="card">
+        
+                <div class="topic-card">
                     <img src="index3.jpg" alt="Путешествия">
-                    <h3>Путешествия</h3>
-                    <p>Делимся впечатлениями о поездках и советами.</p>
+                    <div class="card-content">
+                        <h3>Путешествия</h3>
+                        <p>Делимся впечатлениями о поездках и советами.</p>
+                        <a href="#" class="btn-topic">Читать</a>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="blog" class="section">
+        <section id="blog" class="section blog-section">
             <h2>Последние статьи</h2>
-            <p>Читайте интересные материалы и статьи от наших авторов.</p>
+            <div class="blog-container">
+                <div class="blog-card">
+                    <img src="1.jpg" alt="Статья 1">
+                    <div class="blog-content">
+                        <h3>Будущее искусственного интеллекта</h3>
+                        <p>Искусственный интеллект меняет мир. Узнайте, какие перспективы ждут нас в ближайшем будущем.</p>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar-alt"></i> 15 марта 2025</span>
+                            <span><i class="fas fa-user"></i> Автор: Иван Петров</span>
+                        </div>
+                        <a href="#" class="btn-read">Читать далее</a>
+                    </div>
+                </div>
+        
+                <div class="blog-card">
+                    <img src="ar.jpg" alt="Статья 2">
+                    <div class="blog-content">
+                        <h3>Топ-10 языков программирования</h3>
+                        <p>Какие языки программирования сейчас востребованы и какие стоит изучать в 2025 году?</p>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar-alt"></i> 10 марта 2025</span>
+                            <span><i class="fas fa-user"></i> Автор: Анна Смирнова</span>
+                        </div>
+                        <a href="#" class="btn-read">Читать далее</a>
+                    </div>
+                </div>
+        
+                <div class="blog-card">
+                    <img src="ar2.jpg" alt="Статья 3">
+                    <div class="blog-content">
+                        <h3>Как защитить свои данные в интернете?</h3>
+                        <p>Советы по кибербезопасности, которые помогут вам сохранить личные данные в безопасности.</p>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar-alt"></i> 5 марта 2025</span>
+                            <span><i class="fas fa-user"></i> Автор: Дмитрий Соколов</span>
+                        </div>
+                        <a href="#" class="btn-read">Читать далее</a>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <section id="faq" class="section">
+        <section id="faq" class="section faq-section">
             <h2>Часто задаваемые вопросы</h2>
-            <p>Ответы на самые популярные вопросы пользователей.</p>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question">Как зарегистрироваться на форуме? <i class="fas fa-chevron-down"></i></button>
+                    <div class="faq-answer">
+                        <p>Для регистрации нажмите кнопку "Присоединиться" и заполните форму.</p>
+                    </div>
+                </div>
+        
+                <div class="faq-item">
+                    <button class="faq-question">Как добавить новую тему? <i class="fas fa-chevron-down"></i></button>
+                    <div class="faq-answer">
+                        <p>Перейдите в соответствующий раздел и нажмите кнопку "Создать тему".</p>
+                    </div>
+                </div>
+        
+                <div class="faq-item">
+                    <button class="faq-question">Как связаться с администрацией? <i class="fas fa-chevron-down"></i></button>
+                    <div class="faq-answer">
+                        <p>Вы можете написать нам через форму обратной связи на странице "Контакты".</p>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <section id="contacts" class="contacts-section">
-            <div class="contacts-content">
-                <h2>Контакты</h2>
-                <p><i class="fa-solid fa-envelope"></i> Свяжитесь с нами через email: support@forum.com</p>
-                <p><i class="fa-solid fa-location-dot"></i> Адрес: Москва, ул. Примерная, 1</p>
+        <section id="contacts" class="section contacts-section">
+            <div class="contacts-container">
+                <div class="contact-info">
+                    <h2>Свяжитесь с нами</h2>
+                    <p><i class="fas fa-envelope"></i> support@forum.com</p>
+                    <p><i class="fas fa-phone"></i> +7 (999) 123-45-67</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Москва, ул. Примерная, 1</p>
+                </div>
+        
+                <form class="contact-form">
+                    <h2>Напишите нам</h2>
+                    <label>
+                        <input type="text" name="name" required>
+                        <span>Ваше имя</span>
+                    </label>
+                    <label>
+                        <input type="email" name="email" required>
+                        <span>Email</span>
+                    </label>
+                    <label>
+                        <textarea name="message" rows="4" required></textarea>
+                        <span>Ваше сообщение</span>
+                    </label>
+                    <button type="submit" class="submit-btn">Отправить</button>
+                </form>
             </div>
-            <img src="cont.jpg" alt="Контакты" class="contacts-img">
         </section>
+
+
+
+        
+
+        <form class="form  register-form">
+            <span class="close-btn">&times;</span>
+            <p class="title">Регистрация</p>
+            <p class="message">Зарегистрируйтесь сейчас и получите полный доступ к нашему сайту. </p>
+                <div class="flex">
+                <label>
+                    <input class="input" type="text" placeholder="" required="">
+                    <span>Имя </span>
+                </label>
+        
+                <label>
+                    <input class="input" type="text" placeholder="" required="">
+                    <span>Фамилия</span>
+                </label>
+            </div>  
+                    
+            <label>
+                <input class="input" type="email" placeholder="" required="">
+                <span>Почта</span>
+            </label> 
+                
+            <label>
+                <input class="input" type="password" placeholder="" required="">
+                <span>Пароль</span>
+            </label>
+            <label>
+                <input class="input" type="password" placeholder="" required="">
+                <span>Подтвердите пароль </span>
+            </label>
+            <button class="submit">Зарегистрироваться</button>
+            <p class="signin" style="font-size: 20px;">У вас уже есть аккаунт?<a href="#" style="font-size: 20px;"> Войдите</a> </p>
+        </form>
+
+        <form class="form login-form" style="display: none;">
+            <span class="close-btn">&times;</span>
+            <p class="title">Вход</p>
+            <p class="message">Войдите, чтобы получить доступ к сайту.</p>
+            
+            <label>
+                <input class="input" type="email" placeholder="" required="">
+                <span>Почта</span>
+            </label> 
+                    
+            <label>
+                <input class="input" type="password" placeholder="" required="">
+                <span>Пароль</span>
+            </label>
+        
+            <button class="submit">Войти</button>
+            <p class="signin" style="font-size: 20px;">
+                Нет аккаунта? <a href="#" id="register-link" style="font-size: 20px;">Зарегистрируйтесь</a>
+            </p>
+        </form>
+        
     </main>
-      <footer>
+    <footer class="footer">
         <div class="footer-container">
-            <div class="footer-links">
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
+            <div class="footer-logo">
+                <h2>Форум</h2>
+                <p>Присоединяйтесь к нашему сообществу и обсуждайте интересные темы.</p>
             </div>
+    
+            <div class="footer-links">
+                <h3>Быстрые ссылки</h3>
+                <ul>
+                    <li><a href="#home">Главная</a></li>
+                    <li><a href="#about">О нас</a></li>
+                    <li><a href="#topics">Популярные темы</a></li>
+                    <li><a href="#contacts">Контакты</a></li>
+                </ul>
+            </div>
+    
+            <div class="footer-social">
+                <h3>Мы в соцсетях</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    
+        <div class="footer-bottom">
             <p>&copy; 2025 Форум. Все права защищены.</p>
-            <div class="footer-links">
-                <a href="#">Политика конфиденциальности</a>
-                <a href="#">Условия использования</a>
-                <a href="#">Контакты</a>
-            </div>
         </div>
     </footer>
+
+    <script src="script.js"></script>
+    <script src="faq.js"></script>
+    <script src="theme.js"></script>
     
 </body>
 </html>
