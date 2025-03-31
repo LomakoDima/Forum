@@ -13,7 +13,6 @@
     --btn-hover-bg: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
 }
 
-/* === Темная тема === */
 .dark-mode {
     --bg-color: #1a1a1a;
     --text-color: #ffffff;
@@ -38,14 +37,13 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: rgba(44, 62, 80, 0.95); /* Прозрачный фон */
+    background-color: rgba(44, 62, 80, 0.95); 
     padding: 15px 0;
     z-index: 1000;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     transition: background 0.3s ease;
 }
 
-/* Контейнер шапки */
 .header-container {
     display: flex;
     justify-content: space-between;
@@ -55,7 +53,6 @@ header {
     padding: 0 20px;
 }
 
-/* Логотип */
 .logo {
     font-size: 28px;
     font-weight: bold;
@@ -63,13 +60,11 @@ header {
     letter-spacing: 2px;
 }
 
-/* Навигация */
 nav {
     display: flex;
     align-items: center;
 }
 
-/* Список ссылок */
 .nav-links {
     list-style: none;
     display: flex;
@@ -78,7 +73,6 @@ nav {
     padding: 0;
 }
 
-/* Стили для ссылок */
 .nav-item {
     text-decoration: none;
     color: white;
@@ -89,7 +83,6 @@ nav {
     position: relative;
 }
 
-/* Анимация подчеркивания */
 .nav-item::after {
     content: "";
     position: absolute;
@@ -106,18 +99,15 @@ nav {
     transform: scaleX(1);
 }
 
-/* Анимация при наведении */
 .nav-item:hover {
     color: #1abc9c;
     transform: scale(1.1);
 }
 
-/* Активная ссылка */
 .nav-item.active {
     color: #1abc9c;
 }
 
-/* Кнопка входа */
 .login-btn {
     background-color: #1abc9c;
     border-radius: 5px;
@@ -131,7 +121,6 @@ nav {
     transform: scale(1.05);
 }
 
-/* Бургер-меню для мобильных */
 .burger-menu {
     display: none;
     font-size: 24px;
@@ -139,7 +128,6 @@ nav {
     cursor: pointer;
 }
 
-/* Адаптивное меню */
 @media (max-width: 768px) {
     .nav-links {
         display: none;
@@ -201,7 +189,6 @@ body.dark-mode {
     color: #e67e22;
 }
 
-/* Основной контент */
 main {
   padding: 10px;
   margin: 40px auto;
