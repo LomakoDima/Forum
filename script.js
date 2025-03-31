@@ -2,18 +2,17 @@ document.addEventListener("DOMContentLoaded", function () {
     const loginButton = document.getElementById("login-button");
     const form = document.querySelector(".form");
     const overlay = document.createElement("div");
-    const closeButtons = document.querySelectorAll(".close-btn"); // Получаем крестик из HTML
-    const registerLink = document.getElementById("register-link"); // "Зарегистрируйтесь" в форме входа
-    const signinLink = document.querySelector(".signin a"); // "Войдите" в форме регистрации
-    const loginForm = document.querySelector(".login-form"); // Форма входа
-    const registerForm = document.querySelector(".register-form"); // Форма регистрации
-
+    const closeButtons = document.querySelectorAll(".close-btn"); 
+    const registerLink = document.getElementById("register-link");
+    const signinLink = document.querySelector(".signin a"); 
+    const loginForm = document.querySelector(".login-form"); 
+    const registerForm = document.querySelector(".register-form"); 
     if (!loginForm || !registerForm) {
         console.error("Ошибка: формы входа или регистрации не найдены!");
         return;
     }
 
-    // Создаем затемненный фон
+
     overlay.style.position = "fixed";
     overlay.style.top = "0";
     overlay.style.left = "0";
@@ -24,7 +23,6 @@ document.addEventListener("DOMContentLoaded", function () {
     overlay.style.zIndex = "999";
     document.body.appendChild(overlay);
 
-    // Изначально скрываем форму
     form.style.display = "none";
     loginForm.style.display = "none";
     registerForm.style.display = "none";
@@ -35,7 +33,6 @@ document.addEventListener("DOMContentLoaded", function () {
         formToOpen.style.display = "flex";
         overlay.style.display = "block";
 
-        // Блокируем прокрутку страницы
         document.body.style.overflow = "hidden";
 
         formToOpen.style.position = "fixed";
@@ -51,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
         loginForm.style.display = "none";
         registerForm.style.display = "none";
         overlay.style.display = "none";
-        document.body.style.overflow = "auto"; // Включаем прокрутку обратно
+        document.body.style.overflow = "auto"; 
     }
 
     loginButton.addEventListener("click", function (event) {
