@@ -10,11 +10,12 @@
 <body>
     <header>
         <div class="header-container">
-            <div class="logo">Форум</div>
+            <div class="logo">UniForum</div>
             <nav>
                 <ul class="nav-links">
                     <li><a href="#home" class="nav-item">Главная</a></li>
                     <li><a href="#about" class="nav-item">О нас</a></li>
+                    <li><a href="#universities" class="nav-item">Университеты</a></li>
                     <li><a href="#topics" class="nav-item">Темы</a></li>
                     <li><a href="#blog" class="nav-item">Статьи</a></li>
                     <li><a href="#faq" class="nav-item">FAQ</a></li>
@@ -33,33 +34,24 @@
         </div>
     </header>
       <main>
-        <section id="universities" class="section universities-section">
-            <h2>Поиск университетов</h2>
-            <div class="search-container">
-                <input type="text" id="university-search" placeholder="Введите название университета...">
-                <button id="search-btn" class="btn-cta">Поиск</button>
-            </div>
-            <div id="results" class="results-container"></div>
-        </section>
-
 
         <section id="home" class="section home-section">
             <div class="home-content">
-                <h1>Добро пожаловать на форум!</h1>
-                <p>Обсуждайте, делитесь опытом и находите единомышленников!</p>
+                <h1>Добро пожаловать на UniForum!</h1>
+                <p>Общайтесь, делитесь опытом и выбирайте свой университет мечты!</p>
         
                 <div class="stats">
                     <div class="stat">
+                        <h2>5,000+</h2>
+                        <p>Абитуриентов</p>
+                    </div>
+                    <div class="stat">
+                        <h2>2,000+</h2>
+                        <p>Выпускников</p>
+                    </div>
+                    <div class="stat">
                         <h2>10,000+</h2>
-                        <p>Активных пользователей</p>
-                    </div>
-                    <div class="stat">
-                        <h2>50,000+</h2>
-                        <p>Тем и обсуждений</p>
-                    </div>
-                    <div class="stat">
-                        <h2>500,000+</h2>
-                        <p>Сообщений</p>
+                        <p>Обсуждений об университетах</p>
                     </div>
                 </div>
         
@@ -69,8 +61,8 @@
                 </div>
         
                 <div class="testimonials">
-                    <p>"Лучший форум для общения!" – <strong>Алексей</strong></p>
-                    <p>"Здесь я нашел много полезной информации!" – <strong>Мария</strong></p>
+                    <p>"UniForum помог мне выбрать лучший университет!" – <strong>Айгерим</strong></p>
+                    <p>"Здесь я нашел ответы на все свои вопросы о поступлении!" – <strong>Данияр</strong></p>
                 </div>
             </div>
         </section>
@@ -78,24 +70,24 @@
         <section id="about" class="section about-section">
             <div class="about-container">
                 <div class="about-text">
-                    <h2>О нас</h2>
+                    <h2>О UniForum</h2>
                     <p>
-                        Наш форум — это место, где люди могут общаться, обмениваться знаниями и находить единомышленников.  
-                        Мы предлагаем удобную платформу для обсуждения актуальных тем, поиска советов и дележа опытом.
+                        UniForum — это сообщество, где абитуриенты и выпускники делятся опытом, обсуждают университеты и помогают друг другу сделать осознанный выбор.
+                        Мы предлагаем платформу для обмена знаниями, советами и историями успеха.
                     </p>
         
                     <div class="features">
                         <div class="feature">
                             <i class="fas fa-users"></i>
-                            <p>Дружелюбное сообщество</p>
+                            <p>Сообщество абитуриентов и выпускников</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-graduation-cap"></i>
+                            <p>Обсуждения университетов и специальностей</p>
                         </div>
                         <div class="feature">
                             <i class="fas fa-lightbulb"></i>
-                            <p>Полезные советы и гайды</p>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-shield-alt"></i>
-                            <p>Безопасность и конфиденциальность</p>
+                            <p>Советы по поступлению и подготовке к экзаменам</p>
                         </div>
                     </div>
         
@@ -103,37 +95,47 @@
                 </div>
         
                 <div class="about-image">
-                    <img src="about.jpg" alt="О нас">
+                    <img src="about.jpg" alt="О UniForum">
                 </div>
             </div>
+        </section>
+
+        <section id="universities" class="section universities-section">
+            <h2>Университеты</h2>
+            <div class="search-container">
+                <input type="text" id="university-search" placeholder="Поиск университета...">
+                <button id="search-btn" class="btn-cta">Найти</button>
+            </div>
+            <div id="results" class="results-container">
+                </div>
         </section>
 
         <section id="topics" class="section topics-section">
             <h2>Популярные темы</h2>
             <div class="topics-container">
                 <div class="topic-card">
-                    <img src="index1.jpg" alt="Технологии">
+                    <img src="topic1.jpg" alt="Подготовка к ЕНТ">
                     <div class="card-content">
-                        <h3>Технологии</h3>
-                        <p>Обсуждаем последние новинки в мире технологий.</p>
+                        <h3>Подготовка к ЕНТ</h3>
+                        <p>Обсуждаем стратегии подготовки и делимся советами.</p>
                         <a href="#" class="btn-topic">Читать</a>
                     </div>
                 </div>
         
                 <div class="topic-card">
-                    <img src="index2.jpg" alt="Игры">
+                    <img src="topic2.jpg" alt="Выбор специальности">
                     <div class="card-content">
-                        <h3>Игры</h3>
-                        <p>Обсуждаем любимые игры и свежие релизы.</p>
+                        <h3>Выбор специальности</h3>
+                        <p>Помогаем определиться с будущей профессией.</p>
                         <a href="#" class="btn-topic">Читать</a>
                     </div>
                 </div>
         
                 <div class="topic-card">
-                    <img src="index3.jpg" alt="Путешествия">
+                    <img src="topic3.jpg" alt="Учеба за рубежом">
                     <div class="card-content">
-                        <h3>Путешествия</h3>
-                        <p>Делимся впечатлениями о поездках и советами.</p>
+                        <h3>Учеба за рубежом</h3>
+                        <p>Обсуждаем возможности обучения в других странах.</p>
                         <a href="#" class="btn-topic">Читать</a>
                     </div>
                 </div>
@@ -144,39 +146,39 @@
             <h2>Последние статьи</h2>
             <div class="blog-container">
                 <div class="blog-card">
-                    <img src="1.jpg" alt="Статья 1">
+                    <img src="blog1.jpg" alt="Как выбрать университет">
                     <div class="blog-content">
-                        <h3>Будущее искусственного интеллекта</h3>
-                        <p>Искусственный интеллект меняет мир. Узнайте, какие перспективы ждут нас в ближайшем будущем.</p>
+                        <h3>Как выбрать университет своей мечты</h3>
+                        <p>Советы и рекомендации для абитуриентов.</p>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar-alt"></i> 20 марта 2025</span>
+                            <span><i class="fas fa-user"></i> Автор: Асель</span>
+                        </div>
+                        <a href="#" class="btn-read">Читать далее</a>
+                    </div>
+                </div>
+        
+                <div class="blog-card">
+                    <img src="blog2.jpg" alt="Подготовка к собеседованию">
+                    <div class="blog-content">
+                        <h3>Секреты успешного собеседования</h3>
+                        <p>Как произвести хорошее впечатление на приемную комиссию.</p>
                         <div class="blog-meta">
                             <span><i class="fas fa-calendar-alt"></i> 15 марта 2025</span>
-                            <span><i class="fas fa-user"></i> Автор: Иван Петров</span>
+                            <span><i class="fas fa-user"></i> Автор: Ерлан</span>
                         </div>
                         <a href="#" class="btn-read">Читать далее</a>
                     </div>
                 </div>
         
                 <div class="blog-card">
-                    <img src="ar.jpg" alt="Статья 2">
+                    <img src="blog3.jpg" alt="Гранты и стипендии">
                     <div class="blog-content">
-                        <h3>Топ-10 языков программирования</h3>
-                        <p>Какие языки программирования сейчас востребованы и какие стоит изучать в 2025 году?</p>
+                        <h3>Где найти гранты и стипендии</h3>
+                        <p>Обзор возможностей финансирования обучения.</p>
                         <div class="blog-meta">
                             <span><i class="fas fa-calendar-alt"></i> 10 марта 2025</span>
-                            <span><i class="fas fa-user"></i> Автор: Анна Смирнова</span>
-                        </div>
-                        <a href="#" class="btn-read">Читать далее</a>
-                    </div>
-                </div>
-        
-                <div class="blog-card">
-                    <img src="ar2.jpg" alt="Статья 3">
-                    <div class="blog-content">
-                        <h3>Как защитить свои данные в интернете?</h3>
-                        <p>Советы по кибербезопасности, которые помогут вам сохранить личные данные в безопасности.</p>
-                        <div class="blog-meta">
-                            <span><i class="fas fa-calendar-alt"></i> 5 марта 2025</span>
-                            <span><i class="fas fa-user"></i> Автор: Дмитрий Соколов</span>
+                            <span><i class="fas fa-user"></i> Автор: Сауле</span>
                         </div>
                         <a href="#" class="btn-read">Читать далее</a>
                     </div>
@@ -184,27 +186,102 @@
             </div>
         </section>
 
+        <section  id="cards-type" class="cards-types-section">
+            <div class="container">
+                <div class="cards-grid">
+                    <!-- Card 1 -->
+                    <div class="card">
+                        <div class="card-overlay"></div>
+                        <div class="card-content">
+                            <div>
+                                <h3>Innovation Hub</h3>
+                                <p>Discover the latest trends in technology and innovation. Join our community of forward-thinkers.</p>
+                            </div>
+                            <div class="card-link">
+                                Learn more
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!-- Card 2 -->
+                    <div class="card">
+                        <div class="card-overlay"></div>
+                        <div class="card-content">
+                            <div>
+                                <h3>Creative Studio</h3>
+                                <p>Unleash your creativity with powerful tools and inspiring resources.</p>
+                            </div>
+                            <div class="card-link">
+                                Explore now
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!-- Card 3 -->
+                    <div class="card">
+                        <div class="card-overlay"></div>
+                        <div class="card-content">
+                            <div>
+                                <h3>Eco Solutions</h3>
+                                <p>Sustainable technologies for a better tomorrow. Make an impact today.</p>
+                            </div>
+                            <div class="card-link">
+                                Discover more
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!-- Card 4 -->
+                    <div class="card">
+                        <div class="card-overlay"></div>
+                        <div class="card-content">
+                            <div>
+                                <h3>Learning Path</h3>
+                                <p>Personalized learning experiences to help you grow and succeed.</p>
+                            </div>
+                            <div class="card-link">
+                                Start learning
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
         <section id="faq" class="section faq-section">
             <h2>Часто задаваемые вопросы</h2>
             <div class="faq-container">
                 <div class="faq-item">
-                    <button class="faq-question">Как зарегистрироваться на форуме? <i class="fas fa-chevron-down"></i></button>
+                    <button class="faq-question">Как поступить в зарубежный университет? <i class="fas fa-chevron-down"></i></button>
                     <div class="faq-answer">
-                        <p>Для регистрации нажмите кнопку "Присоединиться" и заполните форму.</p>
+                        <p>Обсудите это в разделе "Учеба за рубежом" или прочитайте статьи в блоге.</p>
                     </div>
                 </div>
         
                 <div class="faq-item">
-                    <button class="faq-question">Как добавить новую тему? <i class="fas fa-chevron-down"></i></button>
+                    <button class="faq-question">Как подготовиться к ЕНТ? <i class="fas fa-chevron-down"></i></button>
                     <div class="faq-answer">
-                        <p>Перейдите в соответствующий раздел и нажмите кнопку "Создать тему".</p>
+                        <p>Посмотрите советы в разделе "Подготовка к ЕНТ".</p>
                     </div>
                 </div>
         
                 <div class="faq-item">
-                    <button class="faq-question">Как связаться с администрацией? <i class="fas fa-chevron-down"></i></button>
+                    <button class="faq-question">Как связаться с администрацией форума? <i class="fas fa-chevron-down"></i></button>
                     <div class="faq-answer">
-                        <p>Вы можете написать нам через форму обратной связи на странице "Контакты".</p>
+                        <p>Напишите нам через форму обратной связи на странице "Контакты".</p>
                     </div>
                 </div>
             </div>
@@ -214,9 +291,9 @@
             <div class="contacts-container">
                 <div class="contact-info">
                     <h2>Свяжитесь с нами</h2>
-                    <p><i class="fas fa-envelope"></i> support@forum.com</p>
-                    <p><i class="fas fa-phone"></i> +7 (999) 123-45-67</p>
-                    <p><i class="fas fa-map-marker-alt"></i> Москва, ул. Примерная, 1</p>
+                    <p><i class="fas fa-envelope"></i> support@uniforum.kz</p>
+                    <p><i class="fas fa-phone"></i> +7 (777) 123-45-67</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Казахстан, г. Алматы</p>
                 </div>
         
                 <form class="contact-form">
@@ -236,6 +313,7 @@
                     <button type="submit" class="submit-btn">Отправить</button>
                 </form>
             </div>
+        
         </section>
 
 
@@ -273,6 +351,7 @@
             </label>
             <button class="submit">Зарегистрироваться</button>
             <p class="signin" style="font-size: 20px;">У вас уже есть аккаунт?<a href="#" style="font-size: 20px;"> Войдите</a> </p>
+            
         </form>
 
         <form class="form login-form" style="display: none;">
@@ -294,14 +373,31 @@
             <p class="signin" style="font-size: 20px;">
                 Нет аккаунта? <a href="#" id="register-link" style="font-size: 20px;">Зарегистрируйтесь</a>
             </p>
+            <div class="social-login">
+                <p class="social-label">Или войдите с помощью:</p>
+                <div class="social-buttons">
+                    <button class="social-btn google">
+                        <i class="fab fa-google"></i>
+                        <span>Google</span>
+                    </button>
+                    <button class="social-btn yandex">
+                        <i class="fab fa-yandex"></i>
+                        <span>Yandex</span>
+                    </button>
+                    <button class="social-btn microsoft">
+                        <i class="fab fa-microsoft"></i>
+                        <span>Microsoft</span>
+                    </button>
+                </div>
+            </div>
         </form>
         
     </main>
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-logo">
-                <h2>Форум</h2>
-                <p>Присоединяйтесь к нашему сообществу и обсуждайте интересные темы.</p>
+                <h2>UniForum</h2>
+                <p>Общайтесь, делитесь опытом и выбирайте свой университет мечты.</p>
             </div>
     
             <div class="footer-links">
@@ -309,6 +405,7 @@
                 <ul>
                     <li><a href="#home">Главная</a></li>
                     <li><a href="#about">О нас</a></li>
+                    <li><a href="#universities">Университеты</a></li>
                     <li><a href="#topics">Популярные темы</a></li>
                     <li><a href="#contacts">Контакты</a></li>
                 </ul>
@@ -326,7 +423,7 @@
         </div>
     
         <div class="footer-bottom">
-            <p>&copy; 2025 Форум. Все права защищены.</p>
+            <p>&copy; 2025 UniForum. Все права защищены.</p>
         </div>
     </footer>
 
