@@ -35,6 +35,132 @@
     </header>
       <main>
 
+        <button id="create-post-btn" class="create-post-btn">
+            <i class="fas fa-plus-circle"></i>
+            <span>Создать пост</span>
+        </button>
+
+        <!-- Post Creation Modal -->
+        <div id="post-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2>Создать пост об университете</h2>
+                
+                <form class="post-form">
+                    <!-- Post Title -->
+                    <div class="form-group">
+                        <label>Название поста</label>
+                        <input type="text" placeholder="Введите название поста" required>
+                    </div>
+
+                    <!-- Basic Info -->
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Название ВУЗа</label>
+                            <input type="text" placeholder="Например: КБТУ" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Страна</label>
+                            <select class="country-select" required>
+                                <option value="">Выберите страну</option>
+                                <option value="KZ">Казахстан</option>
+                                <option value="RU">Россия</option>
+                                <option value="US">США</option>
+                                <option value="UK">Великобритания</option>
+                                <option value="DE">Германия</option>
+                                <option value="FR">Франция</option>
+                                <option value="IT">Италия</option>
+                                <option value="ES">Испания</option>
+                                <option value="CN">Китай</option>
+                                <option value="JP">Япония</option>
+                                <option value="KR">Южная Корея</option>
+                                <option value="CA">Канада</option>
+                                <option value="AU">Австралия</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Rest of your existing form fields -->
+                    <!-- Academic Info -->
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Направление учебы</label>
+                            <select required>
+                                <option value="">Выберите направление</option>
+                                <option value="tech">Технические науки</option>
+                                <option value="economics">Экономика и финансы</option>
+                                <option value="humanitarian">Гуманитарные науки</option>
+                                <option value="medical">Медицина</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Факультет</label>
+                            <input type="text" placeholder="Название факультета" required>
+                        </div>
+                    </div>
+
+                    <!-- Additional Info -->
+                    <div class="form-group">
+                        <label>Специальность</label>
+                        <input type="text" placeholder="Название специальности" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Сайт ВУЗа</label>
+                        <input type="url" placeholder="https://..." required>
+                    </div>
+
+                    <!-- Checkboxes -->
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox">
+                            <span>Есть общежитие</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox">
+                            <span>Бесплатное обучение</span>
+                        </label>
+                    </div>
+
+                    <!-- Costs -->
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Стоимость обучения в год (USD)</label>
+                            <input type="number" placeholder="0" min="0">
+                        </div>
+                        <div class="form-group">
+                            <label>Стоимость проживания в месяц (USD)</label>
+                            <input type="number" placeholder="0" min="0">
+                        </div>
+                    </div>
+
+                    <!-- Experience -->
+                    <div class="form-group">
+                        <label>Мой опыт поступления</label>
+                        <textarea rows="4" placeholder="Поделитесь своим опытом поступления..."></textarea>
+                    </div>
+
+                    <!-- Pros & Cons -->
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Плюсы обучения</label>
+                            <textarea rows="3" placeholder="Опишите преимущества..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Минусы обучения</label>
+                            <textarea rows="3" placeholder="Опишите недостатки..."></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Советуете ли вы поступать в данный ВУЗ?</label>
+                        <textarea rows="2" placeholder="Поделитесь своим мнением..."></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-post-btn">Опубликовать</button>
+                </form>
+            </div>
+        </div>
+
         <section id="home" class="section home-section">
             <div class="home-content">
                 <h1>Добро пожаловать на UniForum!</h1>
@@ -114,7 +240,7 @@
             <h2>Популярные темы</h2>
             <div class="topics-container">
                 <div class="topic-card">
-                    <img src="topic1.jpg" alt="Подготовка к ЕНТ">
+                    <img src="index1.jpg" alt="Подготовка к ЕНТ">
                     <div class="card-content">
                         <h3>Подготовка к ЕНТ</h3>
                         <p>Обсуждаем стратегии подготовки и делимся советами.</p>
@@ -123,7 +249,7 @@
                 </div>
         
                 <div class="topic-card">
-                    <img src="topic2.jpg" alt="Выбор специальности">
+                    <img src="index2.jpg" alt="Выбор специальности">
                     <div class="card-content">
                         <h3>Выбор специальности</h3>
                         <p>Помогаем определиться с будущей профессией.</p>
@@ -132,7 +258,7 @@
                 </div>
         
                 <div class="topic-card">
-                    <img src="topic3.jpg" alt="Учеба за рубежом">
+                    <img src="index3.jpg" alt="Учеба за рубежом">
                     <div class="card-content">
                         <h3>Учеба за рубежом</h3>
                         <p>Обсуждаем возможности обучения в других странах.</p>
@@ -146,7 +272,7 @@
             <h2>Последние статьи</h2>
             <div class="blog-container">
                 <div class="blog-card">
-                    <img src="blog1.jpg" alt="Как выбрать университет">
+                    <img src="1.jpg" alt="Как выбрать университет">
                     <div class="blog-content">
                         <h3>Как выбрать университет своей мечты</h3>
                         <p>Советы и рекомендации для абитуриентов.</p>
@@ -159,7 +285,7 @@
                 </div>
         
                 <div class="blog-card">
-                    <img src="blog2.jpg" alt="Подготовка к собеседованию">
+                    <img src="ar.jpg" alt="Подготовка к собеседованию">
                     <div class="blog-content">
                         <h3>Секреты успешного собеседования</h3>
                         <p>Как произвести хорошее впечатление на приемную комиссию.</p>
@@ -172,7 +298,7 @@
                 </div>
         
                 <div class="blog-card">
-                    <img src="blog3.jpg" alt="Гранты и стипендии">
+                    <img src="ar2.jpg" alt="Гранты и стипендии">
                     <div class="blog-content">
                         <h3>Где найти гранты и стипендии</h3>
                         <p>Обзор возможностей финансирования обучения.</p>
@@ -316,9 +442,11 @@
         
         </section>
 
+        <section id="posts" class="section post-section">
+            <h2>Посты пользователей</h2>
+            <div id="posts-container" class="results-container"></div>
+        </section>
 
-
-        
 
         <form class="form  register-form">
             <span class="close-btn">&times;</span>
@@ -430,6 +558,7 @@
     <script src="script.js"></script>
     <script src="faq.js"></script>
     <script src="theme.js"></script>
+    <script src="forum.js"></script>
     
 </body>
 </html>
