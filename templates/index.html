@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <div class="logo">UniForum</div>
+        <nav>
+          <ul class="nav-links">
+            <li><a href="#home" class="nav-item">Главная</a></li>
+            <li><a href="#about" class="nav-item">О нас</a></li>
+            <li><a href="#universities" class="nav-item">Университеты</a></li>
+            <li><a href="#topics" class="nav-item">Темы</a></li>
+            <li><a href="#blog" class="nav-item">Статьи</a></li>
+            <li><a href="#faq" class="nav-item">FAQ</a></li>
+            <li><a href="#contacts" class="nav-item">Контакты</a></li>
+            <li>
+              <a href="#" id="login-button" class="nav-item login-btn">Вход</a>
+            </li>
+            <li>
+              <button id="theme-toggle" class="theme-btn">
+                <i class="fas fa-moon"></i>
+              </button>
+            </li>
+          </ul>
+          <div class="burger-menu">
+            <i class="fas fa-bars"></i>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <button id="create-post-btn" class="create-post-btn">
+        <i class="fas fa-plus-circle"></i>
+        <span>Создать пост</span>
+      </button>
+
+      <!-- Post Creation Modal -->
+      <div id="post-modal" class="modal">
+        <div class="modal-content">
+          <span class="close-modal">&times;</span>
+          <h2>Создать пост об университете</h2>
+
+          <form class="post-form">
+            <!-- Post Title -->
+            <div class="form-group">
+              <label>Название поста</label>
+              <input
+                type="text"
+                placeholder="Введите название поста"
+                required
+              />
+            </div>
+
+            <!-- Basic Info -->
+            <div class="form-grid">
+              <div class="form-group">
+                <label>Название ВУЗа</label>
+                <input type="text" placeholder="Например: КБТУ" required />
+              </div>
+              <div class="form-group">
+                <label>Страна</label>
+                <select class="country-select" required>
+                  <option value="">Выберите страну</option>
+                  <option value="KZ">Казахстан</option>
+                  <option value="RU">Россия</option>
+                  <option value="US">США</option>
+                  <option value="UK">Великобритания</option>
+                  <option value="DE">Германия</option>
+                  <option value="FR">Франция</option>
+                  <option value="IT">Италия</option>
+                  <option value="ES">Испания</option>
+                  <option value="CN">Китай</option>
+                  <option value="JP">Япония</option>
+                  <option value="KR">Южная Корея</option>
+                  <option value="CA">Канада</option>
+                  <option value="AU">Австралия</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Rest of your existing form fields -->
+            <!-- Academic Info -->
+            <div class="form-grid">
+              <div class="form-group">
+                <label>Направление учебы</label>
+                <select required>
+                  <option value="">Выберите направление</option>
+                  <option value="tech">Технические науки</option>
+                  <option value="economics">Экономика и финансы</option>
+                  <option value="humanitarian">Гуманитарные науки</option>
+                  <option value="medical">Медицина</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Факультет</label>
+                <input type="text" placeholder="Название факультета" required />
+              </div>
+            </div>
+
+            <!-- Additional Info -->
+            <div class="form-group">
+              <label>Специальность</label>
+              <input
+                type="text"
+                placeholder="Название специальности"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label>Сайт ВУЗа</label>
+              <input type="url" placeholder="https://..." required />
+            </div>
+
+            <!-- Checkboxes -->
+            <div class="checkbox-group">
+              <label class="checkbox-label">
+                <input type="checkbox" />
+                <span>Есть общежитие</span>
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" />
+                <span>Бесплатное обучение</span>
+              </label>
+            </div>
+
+            <!-- Costs -->
+            <div class="form-grid">
+              <div class="form-group">
+                <label>Стоимость обучения в год (USD)</label>
+                <input type="number" placeholder="0" min="0" />
+              </div>
+              <div class="form-group">
+                <label>Стоимость проживания в месяц (USD)</label>
+                <input type="number" placeholder="0" min="0" />
+              </div>
+            </div>
+
+            <!-- Experience -->
+            <div class="form-group">
+              <label>Мой опыт поступления</label>
+              <textarea
+                rows="4"
+                placeholder="Поделитесь своим опытом поступления..."
+              ></textarea>
+            </div>
+
+            <!-- Pros & Cons -->
+            <div class="form-grid">
+              <div class="form-group">
+                <label>Плюсы обучения</label>
+                <textarea
+                  rows="3"
+                  placeholder="Опишите преимущества..."
+                ></textarea>
+              </div>
+              <div class="form-group">
+                <label>Минусы обучения</label>
+                <textarea
+                  rows="3"
+                  placeholder="Опишите недостатки..."
+                ></textarea>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Советуете ли вы поступать в данный ВУЗ?</label>
+              <textarea
+                rows="2"
+                placeholder="Поделитесь своим мнением..."
+              ></textarea>
+            </div>
+
+            <button type="submit" class="submit-post-btn">Опубликовать</button>
+          </form>
+        </div>
+      </div>
+
+      <!--<div id="cookie-consent" class="cookie-consent">
+            <div class="cookie-content">
+              <div class="cookie-text">
+                <h3>Мы используем файлы cookie 🍪</h3>
+                <p>Мы используем файлы cookie для улучшения работы сайта и предоставления персонализированного контента. Вы можете настроить свои предпочтения или принять все файлы cookie.</p>
+              </div>
+              <div class="cookie-buttons">
+                <button id="accept-cookies" class="cookie-btn accept-cookies">Принять все</button>
+                <button id="reject-cookies" class="cookie-btn reject-cookies">Только необходимые</button>
+                <button id="cookie-settings" class="cookie-btn cookie-settings">Настройки</button>
+              </div>
+            </div>
+          </div>
+      
+        
+          <div id="cookie-modal" class="cookie-modal">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h3>Настройки файлов cookie</h3>
+                <button id="close-cookie-modal" class="close-modal">&times;</button>
+              </div>
+              <div class="cookie-options">
+                <div class="cookie-option">
+                  <input type="checkbox" id="necessary-cookies" checked disabled>
+                  <div class="option-text">
+                    <h4>Необходимые файлы cookie</h4>
+                    <p>Эти файлы cookie необходимы для работы сайта и не могут быть отключены.</p>
+                  </div>
+                </div>
+                <div class="cookie-option">
+                  <input type="checkbox" id="analytics-cookies">
+                  <div class="option-text">
+                    <h4>Аналитические файлы cookie</h4>
+                    <p>Помогают нам понять, как посетители взаимодействуют с сайтом.</p>
+                  </div>
+                </div>
+                <div class="cookie-option">
+                  <input type="checkbox" id="marketing-cookies">
+                  <div class="option-text">
+                    <h4>Маркетинговые файлы cookie</h4>
+                    <p>Используются для отслеживания эффективности рекламы и предоставления релевантных предложений.</p>
+                  </div>
+                </div>
+                <div class="cookie-option">
+                  <input type="checkbox" id="preference-cookies">
+                  <div class="option-text">
+                    <h4>Файлы cookie предпочтений</h4>
+                    <p>Позволяют сайту запоминать информацию, которая меняет его работу или внешний вид.</p>
+                  </div>
+                </div>
+              </div>
+              <button id="save-cookie-settings" class="save-settings">Сохранить настройки</button>
+            </div>
+          </div>
+      
+          <div id="root"></div>-->
+
+      <section id="home" class="section home-section">
+        <div class="home-content">
+          <h1>Добро пожаловать на UniForum!</h1>
+          <p>Общайтесь, делитесь опытом и выбирайте свой университет мечты!</p>
+
+          <div class="stats">
+            <div class="stat">
+              <h2>5,000+</h2>
+              <p>Абитуриентов</p>
+            </div>
+            <div class="stat">
+              <h2>2,000+</h2>
+              <p>Выпускников</p>
+            </div>
+            <div class="stat">
+              <h2>10,000+</h2>
+              <p>Обсуждений об университетах</p>
+            </div>
+          </div>
+
+          <div class="buttons">
+            <a href="#register" class="btn-cta">Присоединиться</a>
+            <a href="#about" class="btn-secondary">Узнать больше</a>
+          </div>
+
+          <div class="testimonials">
+            <p>
+              "UniForum помог мне выбрать лучший университет!" –
+              <strong>Айгерим</strong>
+            </p>
+            <p>
+              "Здесь я нашел ответы на все свои вопросы о поступлении!" –
+              <strong>Данияр</strong>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="section about-section">
+        <div class="about-container">
+          <div class="about-text">
+            <h2>О UniForum</h2>
+            <p>
+              UniForum — это сообщество, где абитуриенты и выпускники делятся
+              опытом, обсуждают университеты и помогают друг другу сделать
+              осознанный выбор. Мы предлагаем платформу для обмена знаниями,
+              советами и историями успеха.
+            </p>
+
+            <div class="features">
+              <div class="feature">
+                <i class="fas fa-users"></i>
+                <p>Сообщество абитуриентов и выпускников</p>
+              </div>
+              <div class="feature">
+                <i class="fas fa-graduation-cap"></i>
+                <p>Обсуждения университетов и специальностей</p>
+              </div>
+              <div class="feature">
+                <i class="fas fa-lightbulb"></i>
+                <p>Советы по поступлению и подготовке к экзаменам</p>
+              </div>
+            </div>
+
+            <a href="#register" class="btn-cta">Присоединиться</a>
+          </div>
+
+          <div class="about-image">
+            <img src="about.jpg" alt="О UniForum" />
+          </div>
+        </div>
+      </section>
+
+      <!--<section id="universities" class="section universities-section">
+        <h2>Университеты</h2>
+        <div class="search-container">
+          <input
+            type="text"
+            id="university-search"
+            placeholder="Поиск университета..."
+          />
+          <button id="search-btn" class="btn-cta">Найти</button>
+        </div>
+        <div id="results" class="results-container"></div>
+      </section>-->
+
+      <section id="topics" class="section topics-section">
+        <h2>Популярные темы</h2>
+        <div class="topics-container">
+          <div class="topic-card">
+            <img src="index1.jpg" alt="Подготовка к ЕНТ" />
+            <div class="card-content">
+              <h3>Подготовка к ЕНТ</h3>
+              <p>Обсуждаем стратегии подготовки и делимся советами.</p>
+              <a href="#" class="btn-topic">Читать</a>
+            </div>
+          </div>
+
+          <div class="topic-card">
+            <img src="index2.jpg" alt="Выбор специальности" />
+            <div class="card-content">
+              <h3>Выбор специальности</h3>
+              <p>Помогаем определиться с будущей профессией.</p>
+              <a href="#" class="btn-topic">Читать</a>
+            </div>
+          </div>
+
+          <div class="topic-card">
+            <img src="index3.jpg" alt="Учеба за рубежом" />
+            <div class="card-content">
+              <h3>Учеба за рубежом</h3>
+              <p>Обсуждаем возможности обучения в других странах.</p>
+              <a href="#" class="btn-topic">Читать</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="blog" class="section blog-section">
+        <h2>Последние статьи</h2>
+        <div class="blog-container">
+          <div class="blog-card">
+            <img src="1.jpg" alt="Как выбрать университет" />
+            <div class="blog-content">
+              <h3>Как выбрать университет своей мечты</h3>
+              <p>Советы и рекомендации для абитуриентов.</p>
+              <div class="blog-meta">
+                <span><i class="fas fa-calendar-alt"></i> 20 марта 2025</span>
+                <span><i class="fas fa-user"></i> Автор: Асель</span>
+              </div>
+              <a href="#" class="btn-read">Читать далее</a>
+            </div>
+          </div>
+
+          <div class="blog-card">
+            <img src="ar.jpg" alt="Подготовка к собеседованию" />
+            <div class="blog-content">
+              <h3>Секреты успешного собеседования</h3>
+              <p>Как произвести хорошее впечатление на приемную комиссию.</p>
+              <div class="blog-meta">
+                <span><i class="fas fa-calendar-alt"></i> 15 марта 2025</span>
+                <span><i class="fas fa-user"></i> Автор: Ерлан</span>
+              </div>
+              <a href="#" class="btn-read">Читать далее</a>
+            </div>
+          </div>
+
+          <div class="blog-card">
+            <img src="ar2.jpg" alt="Гранты и стипендии" />
+            <div class="blog-content">
+              <h3>Где найти гранты и стипендии</h3>
+              <p>Обзор возможностей финансирования обучения.</p>
+              <div class="blog-meta">
+                <span><i class="fas fa-calendar-alt"></i> 10 марта 2025</span>
+                <span><i class="fas fa-user"></i> Автор: Сауле</span>
+              </div>
+              <a href="#" class="btn-read">Читать далее</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="cards-type" class="cards-types-section">
+        <div class="container">
+          <div class="cards-grid">
+            <!-- Card 1 -->
+            <div class="card">
+              <div class="card-overlay"></div>
+              <div class="card-content">
+                <div>
+                  <h3>Innovation Hub</h3>
+                  <p>
+                    Discover the latest trends in technology and innovation.
+                    Join our community of forward-thinkers.
+                  </p>
+                </div>
+                <div class="card-link">
+                  Learn more
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card">
+              <div class="card-overlay"></div>
+              <div class="card-content">
+                <div>
+                  <h3>Creative Studio</h3>
+                  <p>
+                    Unleash your creativity with powerful tools and inspiring
+                    resources.
+                  </p>
+                </div>
+                <div class="card-link">
+                  Explore now
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card">
+              <div class="card-overlay"></div>
+              <div class="card-content">
+                <div>
+                  <h3>Eco Solutions</h3>
+                  <p>
+                    Sustainable technologies for a better tomorrow. Make an
+                    impact today.
+                  </p>
+                </div>
+                <div class="card-link">
+                  Discover more
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="card">
+              <div class="card-overlay"></div>
+              <div class="card-content">
+                <div>
+                  <h3>Learning Path</h3>
+                  <p>
+                    Personalized learning experiences to help you grow and
+                    succeed.
+                  </p>
+                </div>
+                <div class="card-link">
+                  Start learning
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="faq" class="section faq-section">
+        <h2>Часто задаваемые вопросы</h2>
+        <div class="faq-container">
+          <div class="faq-item">
+            <button class="faq-question">
+              Как поступить в зарубежный университет?
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Обсудите это в разделе "Учеба за рубежом" или прочитайте статьи
+                в блоге.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              Как подготовиться к ЕНТ? <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Посмотрите советы в разделе "Подготовка к ЕНТ".</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              Как связаться с администрацией форума?
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Напишите нам через форму обратной связи на странице "Контакты".
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contacts" class="section contacts-section">
+        <div class="contacts-container">
+          <div class="contact-info">
+            <h2>Свяжитесь с нами</h2>
+            <p><i class="fas fa-envelope"></i> support@uniforum.kz</p>
+            <p><i class="fas fa-phone"></i> +7 (777) 123-45-67</p>
+            <p><i class="fas fa-map-marker-alt"></i> Казахстан, г. Алматы</p>
+          </div>
+
+          <form class="contact-form">
+            <h2>Напишите нам</h2>
+            <label>
+              <input type="text" name="name" required />
+              <span>Ваше имя</span>
+            </label>
+            <label>
+              <input type="email" name="email" required />
+              <span>Email</span>
+            </label>
+            <label>
+              <textarea name="message" rows="4" required></textarea>
+              <span>Ваше сообщение</span>
+            </label>
+            <button type="submit" class="submit-btn">Отправить</button>
+          </form>
+        </div>
+      </section>
+
+      <section id="posts" class="section post-section">
+        <h2>Посты пользователей</h2>
+        <div id="posts-container" class="results-container"></div>
+      </section>
+
+      <form method="POST" action="/register" class="form register-form">
+        <span class="close-btn">&times;</span>
+        <p class="title">Регистрация</p>
+        <p class="message">
+          Зарегистрируйтесь сейчас и получите полный доступ к нашему сайту.
+        </p>
+        <div class="flex">
+          <label>
+            <input class="input" type="text" name="first_name" placeholder="" required="" />
+            <span>Имя </span>
+          </label>
+
+          <label>
+            <input class="input" type="text" name="last_name" placeholder="" required="" />
+            <span>Фамилия</span>
+          </label>
+        </div>
+
+        <label>
+          <input class="input" type="email" name="email" placeholder="" required="" />
+          <span>Почта</span>
+        </label>
+
+        <label>
+          <input class="input" type="password" name="password"  placeholder="" required="" />
+          <span>Пароль</span>
+        </label>
+        <label>
+          <input class="input" type="password" name="confirm" placeholder="" required="" />
+          <span>Подтвердите пароль </span>
+        </label>
+        <button class="submit" type="submit">Зарегистрироваться</button>
+        <p class="signin" style="font-size: 20px">
+          У вас уже есть аккаунт?<a href="#" style="font-size: 20px">
+            Войдите</a
+          >
+        </p>
+      </form>
+
+      <form
+        method="POST"
+        action="/login"
+        class="form login-form"
+        style="display: none"
+      >
+        <span class="close-btn">&times;</span>
+        <p class="title">Вход</p>
+        <p class="message">Войдите, чтобы получить доступ к сайту.</p>
+
+        <label>
+          <input class="input" type="email" name="email" placeholder="" required="" />
+          <span>Почта</span>
+        </label>
+
+        <label>
+          <input class="input" type="password" name="password" placeholder="" required="" />
+          <span>Пароль</span>
+        </label>
+
+        <button class="submit" type="submit">Войти</button>
+        <p class="signin" style="font-size: 20px">
+          Нет аккаунта?
+          <a href="#" id="register-link" style="font-size: 20px"
+            >Зарегистрируйтесь</a
+          >
+        </p>
+        <div class="social-login">
+          <p class="social-label">Или войдите с помощью:</p>
+          <div class="social-buttons">
+            <button class="social-btn google">
+              <i class="fab fa-google"></i>
+              <span>Google</span>
+            </button>
+            <button class="social-btn yandex">
+              <i class="fab fa-yandex"></i>
+              <span>Yandex</span>
+            </button>
+            <button class="social-btn microsoft">
+              <i class="fab fa-microsoft"></i>
+              <span>Microsoft</span>
+            </button>
+          </div>
+        </div>
+      </form>
+
+      {% with messages = get_flashed_messages() %} {% if messages %}
+      <div class="flashes">
+        {% for message in messages %}
+        <p class="flash-msg">{{ message }}</p>
+        {% endfor %}
+      </div>
+      {% endif %} {% endwith %}
+    </main>
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-logo">
+          <h2>UniForum</h2>
+          <p>Общайтесь, делитесь опытом и выбирайте свой университет мечты.</p>
+        </div>
+
+        <div class="footer-links">
+          <h3>Быстрые ссылки</h3>
+          <ul>
+            <li><a href="#home">Главная</a></li>
+            <li><a href="#about">О нас</a></li>
+            <li><a href="#universities">Университеты</a></li>
+            <li><a href="#topics">Популярные темы</a></li>
+            <li><a href="#contacts">Контакты</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-social">
+          <h3>Мы в соцсетях</h3>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 UniForum. Все права защищены.</p>
+      </div>
+    </footer>
+
+    <script src="/static/js/script.js"></script>
+    <script src="/static/js/faq.js"></script>
+    <script src="/static/js/theme.js"></script>
+    <script src="/static/js/forum.js"></script>
+    <!--<script src="cookies.js"></script>-->
+  </body>
+</html>
