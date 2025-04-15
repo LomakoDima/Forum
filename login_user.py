@@ -2,7 +2,6 @@ import sqlite3
 import hashlib
 
 def hash_password(password: str) -> str:
-    """Хеширует пароль так же, как при регистрации."""
     return hashlib.sha256(password.encode()).hexdigest()
 
 def login_user(email, password):
@@ -25,6 +24,5 @@ def login_user(email, password):
         print("Ошибка входа: неверная почта или пароль.")
         return False
 
-# Пример использования
 if __name__ == "__main__":
     login_user("ivan@example.com", "my_secure_password")

@@ -1,10 +1,8 @@
 import sqlite3
 
-# Подключение к базе данных (создаст файл, если его нет)
 conn = sqlite3.connect('users.db')
 cursor = conn.cursor()
 
-# Создание таблицы пользователей
 cursor.execute('''
 CREATE TABLE IF NOT EXISTS users (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -16,7 +14,6 @@ CREATE TABLE IF NOT EXISTS users (
 )
 ''')
 
-# Сохраняем изменения и закрываем соединение
 conn.commit()
 conn.close()
 

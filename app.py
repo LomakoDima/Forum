@@ -3,7 +3,7 @@ import sqlite3
 import hashlib
 
 app = Flask(__name__)
-app.secret_key = 'supersecretkey'  # Нужен для flash-сообщений
+app.secret_key = 'supersecretkey' 
 
 def hash_password(password: str) -> str:
     return hashlib.sha256(password.encode()).hexdigest()
@@ -13,7 +13,7 @@ def connect_db():
 
 @app.route('/')
 def home():
-    return render_template('index.html')  # Убедись, что HTML лежит в папке "templates"
+    return render_template('index.html')  
 
 @app.route('/register', methods=['POST'])
 def register():

@@ -13,7 +13,11 @@
   <body>
     <header>
       <div class="header-container">
-        <div class="logo">UniForum</div>
+        <div class="logo">
+          <a href="/">
+            <img src="/static/images/logo/logo1.png" alt="GoUniver Logo" class="logo-img" />
+          </a>
+        </div>
         <nav>
           <ul class="nav-links">
             <li><a href="#home" class="nav-item">Главная</a></li>
@@ -44,14 +48,12 @@
         <span>Создать пост</span>
       </button>
 
-      <!-- Post Creation Modal -->
       <div id="post-modal" class="modal">
         <div class="modal-content">
           <span class="close-modal">&times;</span>
           <h2>Создать пост об университете</h2>
 
           <form class="post-form">
-            <!-- Post Title -->
             <div class="form-group">
               <label>Название поста</label>
               <input
@@ -61,7 +63,6 @@
               />
             </div>
 
-            <!-- Basic Info -->
             <div class="form-grid">
               <div class="form-group">
                 <label>Название ВУЗа</label>
@@ -88,8 +89,6 @@
               </div>
             </div>
 
-            <!-- Rest of your existing form fields -->
-            <!-- Academic Info -->
             <div class="form-grid">
               <div class="form-group">
                 <label>Направление учебы</label>
@@ -107,7 +106,6 @@
               </div>
             </div>
 
-            <!-- Additional Info -->
             <div class="form-group">
               <label>Специальность</label>
               <input
@@ -121,7 +119,6 @@
               <input type="url" placeholder="https://..." required />
             </div>
 
-            <!-- Checkboxes -->
             <div class="checkbox-group">
               <label class="checkbox-label">
                 <input type="checkbox" />
@@ -133,7 +130,6 @@
               </label>
             </div>
 
-            <!-- Costs -->
             <div class="form-grid">
               <div class="form-group">
                 <label>Стоимость обучения в год (USD)</label>
@@ -145,7 +141,6 @@
               </div>
             </div>
 
-            <!-- Experience -->
             <div class="form-group">
               <label>Мой опыт поступления</label>
               <textarea
@@ -154,7 +149,6 @@
               ></textarea>
             </div>
 
-            <!-- Pros & Cons -->
             <div class="form-grid">
               <div class="form-group">
                 <label>Плюсы обучения</label>
@@ -185,62 +179,84 @@
         </div>
       </div>
 
-      <!--<div id="cookie-consent" class="cookie-consent">
-            <div class="cookie-content">
-              <div class="cookie-text">
-                <h3>Мы используем файлы cookie 🍪</h3>
-                <p>Мы используем файлы cookie для улучшения работы сайта и предоставления персонализированного контента. Вы можете настроить свои предпочтения или принять все файлы cookie.</p>
+      <div id="cookie-consent" class="cookie-consent">
+        <div class="cookie-content">
+          <div class="cookie-text">
+            <h3>Мы используем файлы cookie 🍪</h3>
+            <p>
+              Мы используем файлы cookie для улучшения работы сайта и
+              предоставления персонализированного контента. Вы можете настроить
+              свои предпочтения или принять все файлы cookie.
+            </p>
+          </div>
+          <div class="cookie-buttons">
+            <button id="accept-cookies" class="cookie-btn accept-cookies">
+              Принять все
+            </button>
+            <button id="reject-cookies" class="cookie-btn reject-cookies">
+              Только необходимые
+            </button>
+            <button id="cookie-settings" class="cookie-btn cookie-settings">
+              Настройки
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div id="cookie-modal" class="cookie-modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3>Настройки файлов cookie</h3>
+            <button id="close-cookie-modal" class="close-modal">&times;</button>
+          </div>
+          <div class="cookie-options">
+            <div class="cookie-option">
+              <input type="checkbox" id="necessary-cookies" checked disabled />
+              <div class="option-text">
+                <h4>Необходимые файлы cookie</h4>
+                <p>
+                  Эти файлы cookie необходимы для работы сайта и не могут быть
+                  отключены.
+                </p>
               </div>
-              <div class="cookie-buttons">
-                <button id="accept-cookies" class="cookie-btn accept-cookies">Принять все</button>
-                <button id="reject-cookies" class="cookie-btn reject-cookies">Только необходимые</button>
-                <button id="cookie-settings" class="cookie-btn cookie-settings">Настройки</button>
+            </div>
+            <div class="cookie-option">
+              <input type="checkbox" id="analytics-cookies" />
+              <div class="option-text">
+                <h4>Аналитические файлы cookie</h4>
+                <p>
+                  Помогают нам понять, как посетители взаимодействуют с сайтом.
+                </p>
+              </div>
+            </div>
+            <div class="cookie-option">
+              <input type="checkbox" id="marketing-cookies" />
+              <div class="option-text">
+                <h4>Маркетинговые файлы cookie</h4>
+                <p>
+                  Используются для отслеживания эффективности рекламы и
+                  предоставления релевантных предложений.
+                </p>
+              </div>
+            </div>
+            <div class="cookie-option">
+              <input type="checkbox" id="preference-cookies" />
+              <div class="option-text">
+                <h4>Файлы cookie предпочтений</h4>
+                <p>
+                  Позволяют сайту запоминать информацию, которая меняет его
+                  работу или внешний вид.
+                </p>
               </div>
             </div>
           </div>
-      
-        
-          <div id="cookie-modal" class="cookie-modal">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h3>Настройки файлов cookie</h3>
-                <button id="close-cookie-modal" class="close-modal">&times;</button>
-              </div>
-              <div class="cookie-options">
-                <div class="cookie-option">
-                  <input type="checkbox" id="necessary-cookies" checked disabled>
-                  <div class="option-text">
-                    <h4>Необходимые файлы cookie</h4>
-                    <p>Эти файлы cookie необходимы для работы сайта и не могут быть отключены.</p>
-                  </div>
-                </div>
-                <div class="cookie-option">
-                  <input type="checkbox" id="analytics-cookies">
-                  <div class="option-text">
-                    <h4>Аналитические файлы cookie</h4>
-                    <p>Помогают нам понять, как посетители взаимодействуют с сайтом.</p>
-                  </div>
-                </div>
-                <div class="cookie-option">
-                  <input type="checkbox" id="marketing-cookies">
-                  <div class="option-text">
-                    <h4>Маркетинговые файлы cookie</h4>
-                    <p>Используются для отслеживания эффективности рекламы и предоставления релевантных предложений.</p>
-                  </div>
-                </div>
-                <div class="cookie-option">
-                  <input type="checkbox" id="preference-cookies">
-                  <div class="option-text">
-                    <h4>Файлы cookie предпочтений</h4>
-                    <p>Позволяют сайту запоминать информацию, которая меняет его работу или внешний вид.</p>
-                  </div>
-                </div>
-              </div>
-              <button id="save-cookie-settings" class="save-settings">Сохранить настройки</button>
-            </div>
-          </div>
-      
-          <div id="root"></div>-->
+          <button id="save-cookie-settings" class="save-settings">
+            Сохранить настройки
+          </button>
+        </div>
+      </div>
+
+      <div id="root"></div>
 
       <section id="home" class="section home-section">
         <div class="home-content">
@@ -437,7 +453,6 @@
               </div>
             </div>
 
-            <!-- Card 2 -->
             <div class="card">
               <div class="card-overlay"></div>
               <div class="card-content">
@@ -467,7 +482,6 @@
               </div>
             </div>
 
-            <!-- Card 3 -->
             <div class="card">
               <div class="card-overlay"></div>
               <div class="card-content">
@@ -497,7 +511,6 @@
               </div>
             </div>
 
-            <!-- Card 4 -->
             <div class="card">
               <div class="card-overlay"></div>
               <div class="card-content">
@@ -610,28 +623,67 @@
         </p>
         <div class="flex">
           <label>
-            <input class="input" type="text" name="first_name" placeholder="" required="" />
+            <input
+              class="input"
+              type="text"
+              name="first_name"
+              placeholder=""
+              required=""
+            />
             <span>Имя </span>
           </label>
 
           <label>
-            <input class="input" type="text" name="last_name" placeholder="" required="" />
+            <input
+              class="input"
+              type="text"
+              name="last_name"
+              placeholder=""
+              required=""
+            />
             <span>Фамилия</span>
           </label>
         </div>
 
         <label>
-          <input class="input" type="email" name="email" placeholder="" required="" />
+          <input
+            class="input"
+            type="email"
+            name="email"
+            placeholder=""
+            required=""
+          />
           <span>Почта</span>
         </label>
 
         <label>
-          <input class="input" type="password" name="password"  placeholder="" required="" />
+          <input
+            class="input"
+            type="password"
+            name="password"
+            placeholder=""
+            required=""
+          />
           <span>Пароль</span>
         </label>
         <label>
-          <input class="input" type="password" name="confirm" placeholder="" required="" />
+          <input
+            class="input"
+            type="password"
+            name="confirm"
+            placeholder=""
+            required=""
+          />
           <span>Подтвердите пароль </span>
+        </label>
+        <label class="checkbox-label" style="margin-top: 10px">
+          <input type="checkbox" required />
+          <span
+            >Я согласен с
+            <a href="/privacy-policy" target="_blank" style="color: #ff8c00"
+              >политикой конфиденциальности</a
+            ></span
+          >
         </label>
         <button class="submit" type="submit">Зарегистрироваться</button>
         <p class="signin" style="font-size: 20px">
@@ -652,15 +704,35 @@
         <p class="message">Войдите, чтобы получить доступ к сайту.</p>
 
         <label>
-          <input class="input" type="email" name="email" placeholder="" required="" />
+          <input
+            class="input"
+            type="email"
+            name="email"
+            placeholder=""
+            required=""
+          />
           <span>Почта</span>
         </label>
 
         <label>
-          <input class="input" type="password" name="password" placeholder="" required="" />
+          <input
+            class="input"
+            type="password"
+            name="password"
+            placeholder=""
+            required=""
+          />
           <span>Пароль</span>
         </label>
-
+        <label class="checkbox-label" style="margin-top: 10px;">
+          <input type="checkbox" id="privacy-check" />
+          <span>
+            Я согласен с
+            <a href="/privacy-policy" target="_blank" style="color: #ff8c00;">
+              политикой конфиденциальности
+            </a>
+          </span>
+        </label>
         <button class="submit" type="submit">Войти</button>
         <p class="signin" style="font-size: 20px">
           Нет аккаунта?
@@ -687,10 +759,38 @@
         </div>
       </form>
 
-      {% with messages = get_flashed_messages() %} {% if messages %}
+      {% with messages = get_flashed_messages(with_categories=true) %} {% if
+      messages %}
       <div class="flashes">
-        {% for message in messages %}
-        <p class="flash-msg">{{ message }}</p>
+        {% for category, message in messages %}
+        <div class="flash-msg flash-{{ category }}">
+          <div class="flash-icon">
+            {% if category == 'success' %}
+            <i class="fas fa-check-circle"></i>
+            {% elif category == 'error' %}
+            <i class="fas fa-times-circle"></i>
+            {% elif category == 'warning' %}
+            <i class="fas fa-exclamation-triangle"></i>
+            {% else %}
+            <i class="fas fa-info-circle"></i>
+            {% endif %}
+          </div>
+          <div class="flash-progress"></div>
+          <div class="flash-content">
+            <p>{{ message }}</p>
+            <div class="flash-timer">
+              <div class="flash-progress"></div>
+            </div>
+          </div>
+          <button class="flash-close">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M19 6.4L17.6 5 12 10.6 6.4 5 5 6.4 10.6 12 5 17.6 6.4 19 12 13.4 17.6 19 19 17.6 13.4 12z"
+              />
+            </svg>
+          </button>
+          <div class="flash-progress"></div>
+        </div>
         {% endfor %}
       </div>
       {% endif %} {% endwith %}
@@ -733,6 +833,7 @@
     <script src="/static/js/faq.js"></script>
     <script src="/static/js/theme.js"></script>
     <script src="/static/js/forum.js"></script>
-    <!--<script src="cookies.js"></script>-->
+    <script src="/static/js/flash.js"></script>
+    <script src="/static/js/cookies.js"></script>
   </body>
 </html>

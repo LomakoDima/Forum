@@ -5,19 +5,16 @@ document.addEventListener("DOMContentLoaded", function () {
   const postForm = document.querySelector(".post-form");
   const resultsContainer = document.getElementById("posts-container");
 
-  // Open modal
   createPostBtn?.addEventListener("click", function () {
     postModal.style.display = "block";
     document.body.style.overflow = "hidden";
   });
 
-  // Close modal
   closeModal?.addEventListener("click", function () {
     postModal.style.display = "none";
     document.body.style.overflow = "auto";
   });
 
-  // Close modal when clicking outside
   window.addEventListener("click", function (event) {
     if (event.target === postModal) {
       postModal.style.display = "none";
@@ -25,7 +22,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // Handle form submission
   postForm?.addEventListener("submit", function (event) {
     event.preventDefault();
 
@@ -57,10 +53,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const postCard = document.createElement("div");
     postCard.classList.add("university-card", "post");
     
-    const postId = Date.now().toString(); // Unique ID for the post
+    const postId = Date.now().toString(); 
     postCard.dataset.postId = postId;
 
-    // Create preview content
     const previewContent = `
       <div class="post-header">
         <h3 class="post-title">${data.postTitle}</h3>
@@ -77,7 +72,6 @@ document.addEventListener("DOMContentLoaded", function () {
       </div>
     `;
 
-    // Create full content
     const fullContent = `
       <div class="post-content" style="display: none;">
         <div class="university-info">
@@ -148,7 +142,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     postCard.innerHTML = previewContent + fullContent;
 
-    // Add event listeners for expand/collapse
     const expandBtn = postCard.querySelector('.expand-btn');
     const collapseBtn = postCard.querySelector('.collapse-btn');
     const postContent = postCard.querySelector('.post-content');
@@ -166,10 +159,8 @@ document.addEventListener("DOMContentLoaded", function () {
       postPreview.style.animation = 'fadeIn 0.3s ease-in-out';
     });
 
-    // Add event listeners for post actions
     setupPostActions(postCard);
 
-    // Add the post to the container
     resultsContainer?.prepend(postCard);
   }
 
@@ -181,7 +172,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const commentInput = postCard.querySelector('.comment-input');
     const submitCommentBtn = postCard.querySelector('.submit-comment');
 
-    // Like button
     likeBtn?.addEventListener('click', function() {
       if (this.classList.contains('active')) {
         this.classList.remove('active');
@@ -197,7 +187,6 @@ document.addEventListener("DOMContentLoaded", function () {
       this.querySelector('.count').textContent = this.dataset.count;
     });
 
-    // Dislike button
     dislikeBtn?.addEventListener('click', function() {
       if (this.classList.contains('active')) {
         this.classList.remove('active');
@@ -213,12 +202,10 @@ document.addEventListener("DOMContentLoaded", function () {
       this.querySelector('.count').textContent = this.dataset.count;
     });
 
-    // Comment button
     commentBtn?.addEventListener('click', function() {
       commentsSection.style.display = commentsSection.style.display === 'none' ? 'block' : 'none';
     });
 
-    // Submit comment
     submitCommentBtn?.addEventListener('click', function() {
       const commentText = commentInput.value.trim();
       if (commentText) {
@@ -235,13 +222,11 @@ document.addEventListener("DOMContentLoaded", function () {
         postCard.querySelector('.comments-list').appendChild(commentElement);
         commentInput.value = '';
         
-        // Update comment count
         const count = postCard.querySelectorAll('.comment').length;
         commentBtn.querySelector('.count').textContent = count;
       }
     });
 
-    // Submit comment on Enter
     commentInput?.addEventListener('keypress', function(e) {
       if (e.key === 'Enter') {
         submitCommentBtn.click();

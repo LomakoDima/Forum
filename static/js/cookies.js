@@ -1,4 +1,3 @@
-// Cookie consent functionality
 document.addEventListener('DOMContentLoaded', function() {
     const cookieConsent = document.getElementById('cookie-consent');
     const acceptCookies = document.getElementById('accept-cookies');
@@ -7,41 +6,35 @@ document.addEventListener('DOMContentLoaded', function() {
     const cookieModal = document.getElementById('cookie-modal');
     const saveCookieSettings = document.getElementById('save-cookie-settings');
     const closeCookieModal = document.getElementById('close-cookie-modal');
-  
-    // Check if user has already made a choice
+
     const cookieChoice = getCookie('cookie-consent');
     if (!cookieChoice) {
       setTimeout(() => {
         cookieConsent.classList.add('show');
       }, 2000);
     }
-  
-    // Accept all cookies
+
     acceptCookies?.addEventListener('click', () => {
       setAllCookies(true);
       cookieConsent.classList.remove('show');
       setCookie('cookie-consent', 'accepted', 365);
     });
-  
-    // Reject non-essential cookies
+
     rejectCookies?.addEventListener('click', () => {
       setAllCookies(false);
       cookieConsent.classList.remove('show');
       setCookie('cookie-consent', 'rejected', 365);
     });
-  
-    // Open cookie settings modal
+
     cookieSettings?.addEventListener('click', () => {
       cookieModal.classList.add('show');
       cookieConsent.classList.remove('show');
     });
   
-    // Close cookie settings modal
     closeCookieModal?.addEventListener('click', () => {
       cookieModal.classList.remove('show');
     });
   
-    // Save cookie preferences
     saveCookieSettings?.addEventListener('click', () => {
       const analytics = document.getElementById('analytics-cookies').checked;
       const marketing = document.getElementById('marketing-cookies').checked;
@@ -55,7 +48,6 @@ document.addEventListener('DOMContentLoaded', function() {
       cookieModal.classList.remove('show');
     });
   
-    // Helper functions
     function setCookie(name, value, days) {
       let expires = '';
       if (days) {

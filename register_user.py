@@ -2,7 +2,6 @@ import sqlite3
 import hashlib
 
 def hash_password(password: str) -> str:
-    """Создаёт SHA-256 хеш от пароля."""
     return hashlib.sha256(password.encode()).hexdigest()
 
 def register_user(first_name, last_name, email, password):
@@ -25,7 +24,5 @@ def register_user(first_name, last_name, email, password):
     finally:
         conn.close()
 
-# Пример использования
 if __name__ == "__main__":
-    # Данные можно потом получать из формы на сайте
     register_user("Иван", "Иванов", "ivan@example.com", "my_secure_password")

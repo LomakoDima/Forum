@@ -2,13 +2,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const themeToggle = document.getElementById("theme-toggle");
     const body = document.body;
 
-    // Проверяем сохраненную тему
     if (localStorage.getItem("theme") === "dark") {
         body.classList.add("dark-mode");
         themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
     }
 
-    // Переключение темы
     themeToggle.addEventListener("click", function () {
         body.classList.toggle("dark-mode");
 
